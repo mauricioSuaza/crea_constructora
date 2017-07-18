@@ -1,0 +1,87 @@
+<section id="subheader">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>
+          CONTACT US
+        </h1>
+      </div>
+      <!-- devider -->
+      <div class="col-md-12">
+        <div class="devider-page">
+          <div class="devider-img-right">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <ul class="subdetail">
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+
+          <li class="sep">/
+          </li>
+
+          <li>CONTACT
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section aria-label="contact" class="whitepage">
+  <div class="container">
+    <div class="row">
+
+      <div class="no-gutter">
+
+        <!-- map -->
+        <div class="col-md-9 col-sm-7">
+          <div class="onStep" data-animation="fadeInLeft" data-time="300" id="map">
+          </div>
+        </div>
+        <!-- map end -->
+
+        <!-- address -->
+        <div class="col-md-3 col-sm-5">
+          <div class="wrapaddres onStep" data-animation="fadeInRight" data-time="600">
+            <address>
+              <span><strong>ADDRESS</strong><br>
+              1756 n bayshore dr  #7A,<br>
+              Miami, FL 10903</span> <span><strong>PHONE</strong><br>
+              (+6221) 000 888 999</span> <span><strong>EMAIL</strong><br>
+              <a href="mailto:companyname@gmail.com">companyname@gmail.com</a></span> <span><strong>WEBSITE</strong><br>
+              <a href="#">www.companyname.com</a></span>
+            </address>
+          </div>
+        </div>
+        <!-- address end -->
+      </div>
+
+      <!-- contact form -->
+      <div class="col-md-12 col-xs-12">
+        <div class="onStep" data-animation="fadeInUp" data-time="300" id="contact">
+          <form action="#" class="row" id="form-contact" method="post" name="form-contact">
+            <input id="name-contact" name="name" placeholder="your name" type="text"> <input id="email-contact" name="email" placeholder="your e-mail" type="text">
+
+            <textarea cols="50" id="message-contact" name="message" placeholder="your enquiry" rows="4"></textarea>
+            <div class="success" id="mail_success">
+              Thank you. Your message has been sent
+            </div>
+
+            <div class="error" id="mail_failed">
+              Error, email not sent
+            </div>
+            <button class="btn-contact" id="send-contact" type="submit">Sent Now</button>
+          </form>
+        </div>
+      </div>
+      <!-- contact form end -->
+    </div>
+  </div>
+</section>
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCQ5KODzqooIP496GPLRaMAsZ4eN8Vro_U"></script>
+<%= javascript_include_tag 'map'%>
