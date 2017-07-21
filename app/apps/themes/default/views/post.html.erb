@@ -1,22 +1,107 @@
-<article id="post" >
-    <header class="entry-header">
-        <% if @post.has_thumb? %>
-            <div class="entry-thumbnail">
-                <%= raw @post.the_thumb %>
+<section id="subheader">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h1>
+                PROJECTS DETAIL
+              </h1>
             </div>
-        <% end %>
-        <h1 class="entry-title"><%= @post.the_title %></h1>
-    </header><!-- .entry-header -->
-    <div class="entry-content">
-        <%= raw @post.the_content %>
-    </div><!-- .entry-content -->
-    <footer class="entry-meta">
-        <!-- custom fields -->
-        <% if @post.render_fields.present? %>
-            <hr>
-            <h4><%= ct("extra_attributes", default: 'Extra Attributes') %></h4>
-            <%= raw @post.render_fields %>
-        <% end %>
-    </footer><!-- .entry-meta -->
-</article><!-- #post -->
-<%= render partial: 'partials/comments', locals: {post: @post} if @post.can_commented? %>
+
+            <!-- devider -->
+            <div class="col-md-12">
+              <div class="devider-page">
+                <div class="devider-img-right">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <ul class="subdetail">
+                <li>
+                  <a href="index.html">Home</a>
+                </li>
+
+                <li class="sep">/
+                </li>
+
+                <li>Overview
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- subheader end -->
+      <section class="projects-detail whitepage">
+            <div class="onStep" data-animation="fadeInUp" data-time="300">
+              <div class="container">
+                <div class="row">
+
+                <!-- detail img -->
+                <div class="col-md-offset-2 col-md-8 ">
+                <div id="detailpro" class="owl-carousel">
+                      <div class="item">
+                        <% if @post.has_thumb? %>
+                          <div class="entry-thumbnail" style="height:350px;">
+                              <%= raw @post.the_thumb %>
+                          </div>
+                        <% end %>
+                      </div>
+                </div>
+                </div>
+                <!-- detail img end -->
+
+                <!-- text detail -->
+                <div class="col-md-12" style="margin-top: 30px;">
+                   <%= raw @post.the_content %>
+                </div>
+
+                <div class="col-md-4">
+
+                </div>
+                <!-- text detail end -->
+
+                </div>
+              </div>
+              </div>
+            </section>
+
+
+            <div class="container">
+            <div class="row">
+            <div id="owl-project" class="owl-carousel">
+
+              <% @posts = Cama::Post.all%>
+              <% @posts.each_with_index do |post, index| %>
+                <%post = post.decorate%>
+              <% if index%2 == 0 && index > 1%>
+              <div class="item">
+               <div class="gal-home">
+
+                     <div class="hovereffect">
+                      <%= raw post.the_link_thumb() if post.has_thumb?%>
+                      <a href="<%=post.the_url%>">
+                       <div class="overlay">
+
+                       <h3><%= post.the_title %>
+
+                       <span class="devider"></span>
+                       </h3>
+                        <%= post.the_title %>
+
+                       </div>
+                       </a>
+                     </div>
+
+               </div>
+               </div>
+
+
+              <% end %>
+              <% end %>
+            </div>
+
+        </div>
+        </div>
+
+        <div class="space-double"></div>
