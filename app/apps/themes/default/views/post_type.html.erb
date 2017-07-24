@@ -19,7 +19,7 @@
       <div class="col-md-12">
         <ul class="subdetail">
           <li>
-            <a href="index.html">Home</a>
+            <a href="/">Home</a>
           </li>
 
           <li class="sep">/
@@ -46,145 +46,19 @@
 
             <li class="space">.
             </li>
-
-            <li class="filt-projects" data-project=".arc">ARCHITECT
-            </li>
-
-            <li class="space">.
-            </li>
-
-            <li class="filt-projects" data-project=".int">INTERIOR
-            </li>
-
-            <li class="space">.
-            </li>
-
-            <li class="filt-projects" data-project=".pers">PERSONAL
-            </li>
-
-            <li class="space">.
-            </li>
-
-            <li class="filt-projects" data-project=".coor">COORPORATE
-            </li>
           </ul>
         </div>
       </div>
       <!-- filter project end -->
 
       <!-- start gallery -->
+
+
+
       <div class="no-gutter onStep" data-animation="fadeInUp" data-time="600" id="projects-wrap">
-        <div class="col-md-6 col-xs-12 item arc pers coor">
-          <div class="projects-grid big-img">
-            <a href="img/projects/big/img1.jpg">
-            <div class="hovereffect">
-              <img alt="imageportofolio" class="img-responsive" src="/assets/img/projects/img1.jpg">
-              <div class="overlay">
-                <h3>
-                  more detail
-                </h3>
-              </div>
-            </div></a>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-xs-12 item int">
-          <div class="projects-grid big-img">
-            <a href="img/projects/big/img2.jpg">
-            <div class="hovereffect">
-              <img alt="imageportofolio" class="img-responsive" src="/assets/img/projects/img2.jpg">
-              <div class="overlay">
-                <h3>
-                  more detail
-                </h3>
-              </div>
-            </div></a>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-xs-12 item int">
-          <div class="projects-grid big-img">
-            <a href="img/projects/big/img3.jpg">
-            <div class="hovereffect">
-              <img alt="imageportofolio" class="img-responsive" src="/assets/img/projects/img3.jpg">
-              <div class="overlay">
-                <h3>
-                  more detail
-                </h3>
-              </div>
-            </div></a>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-xs-12 item arc pers">
-          <div class="projects-grid big-img">
-            <a href="img/projects/big/img4.jpg">
-            <div class="hovereffect">
-              <img alt="imageportofolio" class="img-responsive" src="/assets/img/projects/img4.jpg">
-              <div class="overlay">
-                <h3>
-                  more detail
-                </h3>
-              </div>
-            </div></a>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-xs-12 item int">
-          <div class="projects-grid big-img">
-            <a href="img/projects/big/img5.jpg">
-            <div class="hovereffect">
-              <img alt="imageportofolio" class="img-responsive" src="/assets/img/projects/img5.jpg">
-              <div class="overlay">
-                <h3>
-                  more detail
-                </h3>
-              </div>
-            </div></a>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-xs-12 item int">
-          <div class="projects-grid big-img">
-            <a href="img/projects/big/img6.jpg">
-            <div class="hovereffect">
-              <img alt="imageportofolio" class="img-responsive" src="/assets/img/projects/img6.jpg">
-              <div class="overlay">
-                <h3>
-                  more detail
-                </h3>
-              </div>
-            </div></a>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-xs-12 item int">
-          <div class="projects-grid big-img">
-            <a href="img/projects/big/img3.jpg">
-            <div class="hovereffect">
-              <img alt="imageportofolio" class="img-responsive" src="/assets/img/projects/img3.jpg">
-              <div class="overlay">
-                <h3>
-                  more detail
-                </h3>
-              </div>
-            </div></a>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-xs-12 item arc pers">
-          <div class="projects-grid big-img">
-            <a href="img/projects/big/img4.jpg">
-            <div class="hovereffect">
-              <img alt="imageportofolio" class="img-responsive" src="/assets/img/projects/img4.jpg">
-              <div class="overlay">
-                <h3>
-                  more detail
-                </h3>
-              </div>
-            </div></a>
-          </div>
-        </div>
+        <% @posts.each_with_index do |post, index| %>
+          <%= render partial: 'partials/post_list_item', locals: {post: post.decorate} %>
+        <% end %>
       <!-- gallery end -->
     </div>
   </div>

@@ -6,6 +6,10 @@
 
     <%= javascript_include_tag 'application' %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.4.3/sweetalert2.min.js'
+             ></script>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.4.3/sweetalert2.min.css' rel='stylesheet'>
+
 
   </head>
 
@@ -25,7 +29,10 @@
                 </button>
 
                 <!-- logo -->
+
                 <a class="navbar-brand white" href="/"><img alt="logo" src="/assets/img/logo-01.png"></a>
+
+   
 
                 <!-- mainmenu start  -->
                 <div class="white menu-init" id="main-menu">
@@ -34,8 +41,8 @@
                         <li><a class="link-nav" href="/" id="home-link">Home</a></li>
                         <li><a class="link-nav" href="/about" id="about-link">About</a></li>
                         <li><a class="link-nav" href="/services" id="services-link">Services</a></li>
-                        <li><a class="link-nav" href="/projects" id="projects-link">Projects</a></li>
-                        <li><a class="link-nav" href="/contact" id="contact-link">Contact</a></li>
+                        <li><a class="link-nav" href="/post" id="projects-link">Projects</a></li>
+                        <li><a class="link-nav" href="/messages/new" id="contact-link">Contact</a></li>
                         <li class="btn"><a class="popup-form" href="#subwrap">Subscribe</a></li>
                       </ul>
                   </nav>
@@ -46,6 +53,17 @@
           <!-- container -->
         </div>
         <!-- nav end -->
+        <% if notice %>
+            <script>
+              swal("<%= notice %>");
+            </script>
+          <% end %>
+
+          <% if alert%>
+            <script>
+              swal("<%= alert %>");
+            </script>
+          <% end %>
 
 
           <%= yield %>
@@ -74,21 +92,34 @@
           </div>
         </footer>
 
+        <%  @subscription = Subscription.new%>
 
         <div class="white-popup-block mfp-hide animbounceInDown" data-time="0" id="subwrap">
         		<h5>
           		PLEASE FILL YOUR EMAIL BELOW
         		</h5>
+            <div id="subscribe">
+              <%= form_for(@subscription) do |f| %>
+
+                <div class="field">
+                  <%= f.text_field :email, class:"subscribfield subscribeemail", id:"subscribeemail" %>
+                </div>
+
+                <div class="actions">
+                  <%= f.submit "Subscribe", class:"btn-form" %>
+                </div>
+              <% end %>
+
+            </div>
+
+
         		<div class="space-half"></div>
-        		<form action="subscribe.php" id="subscribe" method="post" name="subscribe">
-          		<input class="subscribfield subscribeemail" id="subscribeemail" name="subscribeemail" type="text"> <button class="btn-form" id="submit-2" type="submit">Subscribe</button>
-        		</form>
   			<div class="subscribesuccess">
           		Thank you for fill your email
     		</div>
       	</div>
         <!-- footer end -->
-        </div>
+      </div>
     <!-- content wraper end -->
 
   </body>

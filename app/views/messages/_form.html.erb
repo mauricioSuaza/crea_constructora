@@ -63,19 +63,38 @@
       <!-- contact form -->
       <div class="col-md-12 col-xs-12">
         <div class="" data-animation="fadeInUp" data-time="300" id="contact">
-          <form action="#" class="row" id="form-contact" method="post" name="form-contact">
-            <input id="name-contact" name="name" placeholder="your name" type="text"> <input id="email-contact" name="email" placeholder="your e-mail" type="text">
+          <%= form_for(message) do |f| %>
+            <% if message.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
 
-            <textarea cols="50" id="message-contact" name="message" placeholder="your enquiry" rows="4"></textarea>
-            <div class="success" id="mail_success">
-              Thank you. Your message has been sent
+                <ul>
+                <% message.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+            <div class="col-md-12">
+              <%= f.label :name %>
+              <%= f.text_field :name, id:"name-contact"  %>
             </div>
 
-            <div class="error" id="mail_failed">
-              Error, email not sent
+            <div class="col-md-12">
+              <%= f.label :email %>
+              <%= f.text_field :email, id:"name-contact" %>
             </div>
-            <button class="btn-contact" id="send-contact" type="submit">Sent Now</button>
-          </form>
+
+            <div class="col-md-12">
+              <%= f.label :content %>
+              <%= f.text_field :content, id:"name-contact" %>
+            </div>
+
+            <div class="actions">
+              <%= f.submit "send ", class: "btn-contact" %>
+            </div>
+          <% end %>
         </div>
       </div>
       <!-- contact form end -->

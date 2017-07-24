@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161215202255) do
+ActiveRecord::Schema.define(version: 20170721234222) do
 
   create_table "cama_comments", force: :cascade do |t|
     t.string   "author"
@@ -151,6 +151,26 @@ ActiveRecord::Schema.define(version: 20161215202255) do
     t.index ["username"], name: "index_cama_users_on_username"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "subject"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "plugins_attacks", force: :cascade do |t|
+    t.string   "path"
+    t.string   "browser_key"
+    t.integer  "site_id"
+    t.datetime "created_at"
+    t.index ["browser_key"], name: "index_plugins_attacks_on_browser_key"
+    t.index ["path"], name: "index_plugins_attacks_on_path"
+    t.index ["site_id"], name: "index_plugins_attacks_on_site_id"
+  end
+
   create_table "plugins_contact_forms", force: :cascade do |t|
     t.integer  "site_id"
     t.integer  "count"
@@ -162,6 +182,12 @@ ActiveRecord::Schema.define(version: 20161215202255) do
     t.text     "settings"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
