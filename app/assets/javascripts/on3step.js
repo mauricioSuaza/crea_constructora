@@ -3,6 +3,37 @@
 $(window).on("load", function() {
   "use strict";
 
+  $(".serv1").bind("click", function() {
+    $("#serv2").hide();
+    $("#serv3").hide();
+    $("#serv1").fadeIn(1200);
+    $("#li1").addClass('active')
+    $("#li2").removeClass('active');
+    $("#li3").removeClass('active');
+ });
+
+$(".serv2").bind("click", function() {
+    $("#serv1").hide();
+    $("#serv3").hide();
+    $("#serv2").fadeIn(1200);
+    $("#li2").addClass('active')
+    $("#li1").removeClass('active');
+    $("#li3").removeClass('active');
+ });
+
+$(".serv3").bind("click", function() {
+    $("#serv1").hide();
+    $("#serv2").hide();
+    $("#serv3").fadeIn(1200);
+    $("#li3").addClass('active')
+    $("#li2").removeClass('active');
+    $("#li1").removeClass('active');
+ });
+
+$('.graduate_tab li').click( function() {
+  $(this).addClass('active').siblings().removeClass('active');
+});
+
   // var preloader
   var loader = $('.preloader, .preloader-white');
   var bgpreloader = $('.bg-preloader, .bg-preloader-white');

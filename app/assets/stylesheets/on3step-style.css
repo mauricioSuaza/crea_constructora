@@ -123,6 +123,10 @@ a, a:visited, a:hover, a:active, a:link {
   text-decoration: none;
 }
 
+#owl-gal .img-responsive{
+  height: 160px;
+}
+
 /* space */
 .space-single {
   width: 100%;
@@ -382,7 +386,7 @@ section {
   width: 100%;
   height: auto;
   background: #fff;
-  padding-top: 0px;
+  padding-top: 50px;
   padding-bottom: 25px;
 }
 
@@ -416,7 +420,7 @@ section {
   height: auto;
   color: #fff;
   padding: 30px 0 30px 0;
-  background: #000;
+  background: #565656;
 }
 .yellowpage h1 {
   color: #fff;
@@ -908,7 +912,7 @@ li>a:only-child:after {
   display: inline-block;
   padding: 5px 2px 5px 20px;
   margin-top: -3px;
-  background: #777776;
+  background: #d66c15;
   -webkit-transition: all .1s ease-in-out;
   -moz-transition: all .1s ease-in-out;
   transition: all .1s ease-in-out;
@@ -1067,7 +1071,7 @@ li>a:only-child:after {
 
 /* home */
 #home {
-  color: #000;
+  /*color: #000;*/
   text-align: center;
   min-height: 600px!important;
 }
@@ -1075,12 +1079,14 @@ li>a:only-child:after {
 #home h1 {
   font-size: 26pt;
   letter-spacing: 2px;
+  color: #2d2d2d;
 }
 #home h3 {
   font-size: 30pt;
   font-weight: 500;
   letter-spacing: 1px;
   line-height: normal;
+  color: #8e8e8e;
 }
 #home p {
   font-size: 11pt;
@@ -1596,7 +1602,7 @@ li>a:only-child:after {
 
 /* services */
 .services img {
-  margin: 30px 0 30px 0;
+  margin: 0 0 30px 0;
   width: 100%;
 }
 .services h2 {
@@ -1638,8 +1644,9 @@ li>a:only-child:after {
   background: #333333;
   color: #fff;
 }
+
 .widget .download-brochure {
-  background: url(../img/bg-widget.jpg) no-repeat;
+  background: url(/assets/img/bg-widget.jpg) no-repeat;
   background-size: cover;
   padding: 60px 15px 60px 15px;
   text-align: center;
@@ -1661,7 +1668,7 @@ li>a:only-child:after {
   line-height: 34px;
   letter-spacing: 1px;
   color: #fff;
-  background: #ff6600;
+  background: #d66c15;
   outline: none;
   text-shadow: none;
   margin: 0 auto;
@@ -1854,10 +1861,10 @@ li>a:only-child:after {
 	.detaillist strong{ font-weight:500;}
 
 #detailpro .item img{
-        display: block;
-        width: 100%;
-        height: auto;
-		margin-bottom:20px;
+      display: block;
+      width: 100%;
+      height: auto;
+		  margin-bottom:20px;
     }
 	#owl-project .item {
      display: block;
@@ -3112,4 +3119,12 @@ aside .widget, .widget {
 html {
   margin-right: 0 !important;
   overflow: visible !important;
+}
+
+.def {
+  font-size: 11pt;
+  font-weight: 300;
+  max-width: 650px;
+  margin: 0px auto;
+  text-align: center;
 }

@@ -418,8 +418,8 @@ font-size: 30pt;
     margin-top: 40px;
   }
   .bot-home, .bot-home-text {
-    /*margin-bottom: -90px;*/
-    top: 30px;
+    margin-bottom: -90px;
+    /*top: 30px;*/
   }
 
   #step-text .cont {

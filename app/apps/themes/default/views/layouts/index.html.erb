@@ -24,13 +24,13 @@
                 </button>
 
                 <!-- logo -->
-                <a class="navbar-brand white" href="index-white.html"><img alt="logo" src="/assets/img/logo-01.png"></a>
+                <a class="navbar-brand white" href="/"><img alt="logo" src="/assets/img/logo-01.png"></a>
 
                 <!-- mainmenu start  -->
                 <div class="white menu-init" id="main-menu">
                   <nav id="menu-center">
                       <ul>
-                        <li><a class="actived" href="/home">Home</a></li>
+                        <li><a class="actived" href="/">Home</a></li>
                         <li><a href="/about">About</a></li>
                         <li><a href="/services">Services</a></li>
                         <li><a href="/post">Projects</a></li>
@@ -74,18 +74,32 @@
         </footer>
 
 
+         <%  @subscription = Subscription.new%>
+
         <div class="white-popup-block mfp-hide animbounceInDown" data-time="0" id="subwrap">
-        		<h5>
-          		PLEASE FILL YOUR EMAIL BELOW
-        		</h5>
-        		<div class="space-half"></div>
-        		<form action="subscribe.php" id="subscribe" method="post" name="subscribe">
-          		<input class="subscribfield subscribeemail" id="subscribeemail" name="subscribeemail" type="text"> <button class="btn-form" id="submit-2" type="submit">Subscribe</button>
-        		</form>
-  			<div class="subscribesuccess">
-          		Thank you for fill your email
-    		</div>
-      	</div>
+            <h5>
+              PLEASE FILL YOUR EMAIL BELOW
+            </h5>
+            <div id="subscribe">
+              <%= form_for(@subscription) do |f| %>
+
+                <div class="field">
+                  <%= f.text_field :email, class:"subscribfield subscribeemail", id:"subscribeemail" %>
+                </div>
+
+                <div class="actions">
+                  <%= f.submit "Subscribe", class:"btn-form" %>
+                </div>
+              <% end %>
+
+            </div>
+
+
+            <div class="space-half"></div>
+        <div class="subscribesuccess">
+              Thank you for fill your email
+        </div>
+        </div>
         <!-- footer end -->
         </div>
     <!-- content wraper end -->

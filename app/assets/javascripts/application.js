@@ -17,4 +17,5 @@
 //= require plugin-set
 //= require jquery.themepunch.revolution.min
 //= require on3step
+//= require services
 //= require active_links
